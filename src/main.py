@@ -1,10 +1,14 @@
 from google.cloud import bigquery
+import logging
 from google.api_core.exceptions import NotFound, Forbidden
 
 import base64
 import json
 
 def bq_load_from_gcs(event, context):
+    print(f'Received event: {event}')  
+    logging.info(f'Received event: {event}')
+
     try:
         pubsub_message = base64.b64decode(event['data']).decode('utf-8')
         message_dict = json.loads(pubsub_message)
