@@ -42,7 +42,7 @@ def bq_load_from_gcs(event, context):
                 bigquery.SchemaField("datetime", "STRING"),
                 bigquery.SchemaField("measurement_name", "STRING"),
                 bigquery.SchemaField("millis", "STRING"),
-                bigquery.SchemaField("measuremnet_value", "STRING"),
+                bigquery.SchemaField("measurement_value", "STRING"),
                 bigquery.SchemaField("measurement_status", "STRING"),
             ]
             table = bigquery.Table(table_ref, schema=schema)
@@ -56,7 +56,7 @@ def bq_load_from_gcs(event, context):
                 bigquery.SchemaField("datetime", "STRING"),
                 bigquery.SchemaField("measurement_name", "STRING"),
                 bigquery.SchemaField("millis", "STRING"),
-                bigquery.SchemaField("measuremnet_value", "STRING"),
+                bigquery.SchemaField("measurement_value", "STRING"),
                 bigquery.SchemaField("measurement_status", "STRING"),
             ],
         )
